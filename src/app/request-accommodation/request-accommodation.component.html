@@ -40,21 +40,15 @@
           </div>
         <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Amenity</label>
-        <div class="form-floating mt-2 w-50">
-        
-            <select name="amenitys" ngModel class="form-select"  id="floatingSelect"
-                    aria-label="Floating label select example">
-                       <div style="width:50%">
-                <ng-multiselect-dropdown
-                    [settings]="dropdownSettings"
-                    [data]="dropdownList">
-                </ng-multiselect-dropdown>
-            </div>
-
-            </select>
-            <label for="floatingSelect">Choose Desired Amenity</label>
+          <div style="width:50%">
+        <form [formGroup]="dropDownForm">
+        <ng-multiselect-dropdown>
+           [settings]="dropdownSettings"
+           [data]="dropdownList"
+           formControlName="myItems">
+        </ng-multiselect-dropdown>
           </div>
-          </div>
+            <div>
     
     
   <button type="submit" class="btn btn-primary">Submit</button>
