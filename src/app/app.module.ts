@@ -1,18 +1,12 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-import { MatDatepickerInput, MatDatepickerModule, MatDateRangeInput } from '@angular/material/datepicker';
-import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
-
+import {NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RequestAccommodationComponent } from './request-accommodation/request-accommodation.component';
 import{HttpClientModule} from '@angular/common/http';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatButtonModule } from '@angular/material/button';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule } from '@angular/material/input';
+
 
 
 @NgModule({
@@ -26,12 +20,8 @@ import { MatInputModule } from '@angular/material/input';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    BrowserAnimationsModule,
-    MatInputModule
+    NgMultiSelectDropDownModule.forRoot()
+   
   ],
   
   providers: [],
