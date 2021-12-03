@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+html, body { height: 100%; }
+body{ margin: 0; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+select{
+    padding-right: 2000px;
+}
+span {
+    display: block;
+    overflow: hidden;
+    padding: 0px 4px 0px 6px;
+}
