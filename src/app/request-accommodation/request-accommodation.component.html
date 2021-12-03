@@ -12,21 +12,21 @@
       <label  for="exampleFormControlInput1" class="form-label">No of Days</label>
       <span> <input  style="width:50%" type="text" class="form-control" id="userId" name="noofdays" [(ngModel)]="user.noofdays" > </span>
     </div>
+    
+    <div class="mb-3">
+            <fieldset class ="form-group">
+        <label >Start Date</label>
+        <input type="date" [ngModel]="user.epicker | date:'yyyy-MM-dd' " (ngModelChange) = "user.epicker =$event" name="date" class="form-control" required = 'required'>
+        </fieldset>
+
+    <div class="mb-3">
          
  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Select Date Range</label>
+            <fieldset class ="form-group">
+        <label >End Date</label>
+        <input type="date" [ngModel]="user.epicker | date:'yyyy-MM-dd' " (ngModelChange) = "user.epicker =$event" name="date" class="form-control" required = 'required'>
+        </fieldset>
 
-        <mat-form-field appearance="fill" class="row padding 30px">
-        
-        <mat-date-range-input [rangePicker]="picker">
-            <input style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"  matStartDate placeholder="Start date">
-            <input style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif" matEndDate placeholder="End date">
-        </mat-date-range-input>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-date-range-picker #picker ></mat-date-range-picker>
-        </mat-form-field>
-          </div>
-         
     <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Accommodation Type</label>
         <div class="form-floating mt-2 w-50">
@@ -44,7 +44,12 @@
         
             <select name="amenitys" ngModel class="form-select"  id="floatingSelect"
                     aria-label="Floating label select example">
-              <option *ngFor="let amenity of amenitys">{{amenity}}</option>
+                       <div style="width:50%">
+                <ng-multiselect-dropdown
+                    [settings]="dropdownSettings"
+                    [data]="dropdownList">
+                </ng-multiselect-dropdown>
+            </div>
 
             </select>
             <label for="floatingSelect">Choose Desired Amenity</label>
